@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const panda = require('panda-encryption').Panda;
 const { checksum } = require('../helpers/checksum');
 const aes = require('../helpers/aes');
-const Exception = require('../helpers/exception');
+const Exception = require('../helpers/Exception');
 
 const pandaConfig = {
     key: process.env.ENCRYPTION_KEY,
