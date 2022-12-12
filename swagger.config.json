@@ -1,0 +1,57 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Qrious Admin API",
+    "version": "1.0"
+  },
+  "servers": [{
+    "url": "http://localhost:5000/api/v1"
+  }],
+  "paths": {
+    "/admin/login": {
+      "post": {
+        "tags": [
+          "admin login"
+        ],
+        "description": "Logs in the admin according to its role using the registered id and password",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "inst_id": {
+                    "type": "string",
+                    "example": "10-000704",
+                    "required": [
+                      "inst_id"
+                    ]
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "darkroom-c86ad165800ff6db",
+                    "required": [
+                      "password"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns an admin object and session token mounted  as http cookie"
+          },
+          "400": {
+            "description": "Either the information given is incorrect or the account is deactivated."
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    }
+  }
+}
