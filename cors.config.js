@@ -1,5 +1,5 @@
 module.exports = {
-    origin: ['http://localhost:3000'],
+    origin: ['https://qrious-admin.netlify.app'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
